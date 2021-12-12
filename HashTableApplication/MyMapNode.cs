@@ -17,7 +17,6 @@ namespace HashTableApplication
 
         }
         public void frequencyOfWords(K key)
-
         {
             int position = GetArrayPosition(key);
             LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
@@ -29,7 +28,8 @@ namespace HashTableApplication
                     foundItem = item;
                     string str = foundItem.Value.ToString();
                     Console.WriteLine("found data = " + str);
-                    string[] arr = str.Split(',');
+
+                    string[] arr = str.Split(' ');
                     Dictionary<string, int> dict = new Dictionary<string, int>();
                     for (int i = 0; i < arr.Length; i++)
                     {
@@ -44,9 +44,9 @@ namespace HashTableApplication
                     }
                     foreach (KeyValuePair<String, int> entry in dict)
                     {
-                        Console.WriteLine(entry.Key + " = " +
+                        Console.WriteLine(entry.Key + " - " +
                                           entry.Value);
-                        Console.ReadLine();
+
                     }
                 }
             }
